@@ -9,9 +9,11 @@
 #import "HeadlinesViewController.h"
 #import "NewsTableViewCell.h"
 #import "HomePageNewsDataModel.h"
+#import "NewsDescriptionViewController.h"
 
 
 @interface HeadlinesViewController() <UITableViewDataSource, UITableViewDelegate> {
+    NSIndexPath *selectedIndexpath;
     NSMutableArray <HomePageNewsDataModel *> *homePageNewsDataModel;
 }
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
@@ -28,6 +30,7 @@ NSString *kURLHome = @"https://www.nbcnewyork.com/apps/news-app/home/modules/?ap
 #pragma mark - View Controller - Life Cycle
 
 - (void)viewDidLoad {
+    selectedIndexpath = [NSIndexPath new];
     homePageNewsDataModel = [NSMutableArray new];
     [super viewDidLoad];
     self.tableView.dataSource = self;
@@ -96,7 +99,17 @@ NSString *kURLHome = @"https://www.nbcnewyork.com/apps/news-app/home/modules/?ap
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:true];
+    selectedIndexpath = indexPath;
     [self performSegueWithIdentifier:@"NewsPageSegueIdentifier" sender:self];
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([[segue identifier] isEqualToString:@"NewsPageSegueIdentifier"]) {
+         NewsDescriptionViewController *newsDescriptionViewController = [segue destinationViewController];
+        NewsTableViewCell *selectedCell = [self.tableView cellForRowAtIndexPath:selectedIndexpath];
+        newsDescriptionViewController.thumbnailImage = selectedCell.newsImage.image;
+        newsDescriptionViewController.contentBody = homePageNewsDataModel[selectedIndexpath.section].innerNewsFeedDataModel[selectedIndexpath.row].contentBody;
+    }
 }
 
 @end

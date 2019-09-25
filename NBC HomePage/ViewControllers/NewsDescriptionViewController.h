@@ -11,7 +11,8 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface NewsDescriptionViewController : UIViewController
-
+@property (strong, nonatomic)  UIImage *thumbnailImage;
+@property (strong, nonatomic)  NSString *contentBody;
 @end
 
 NS_ASSUME_NONNULL_END

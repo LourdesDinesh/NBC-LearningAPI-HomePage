@@ -7,26 +7,45 @@
 //
 
 #import "NewsDescriptionViewController.h"
+#import <WebKit/WebKit.h>
 
-@interface NewsDescriptionViewController ()
-
+@interface NewsDescriptionViewController () <WKNavigationDelegate>
+@property (weak, nonatomic) IBOutlet WKWebView *webView;
+@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityView;
+@property (weak, nonatomic) IBOutlet UIImageView *thumbnailImageView;
 @end
 
 @implementation NewsDescriptionViewController
+NSString *htmlTemplate = @"<html>"
+"<div id = \"contentBodyHeight\">"
+"<head>"
+"<style type=\"text/css\">"
+"body {"
+"background-color: #ffffff;"
+"font-family: \"Roboto-Regular\"; padding: 0px; margin: 0px;"
+"}"
+"</style>"
+"</head>"
+"<body>%@</body>"
+"</div>"
+"</html>";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    [self setupPage];
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+-(void) setupPage {
+    self.thumbnailImageView.image = self.thumbnailImage;
+    NSString *modifiedHTML = [NSString stringWithFormat: htmlTemplate, self.contentBody];
+    [self.webView loadHTMLString:modifiedHTML baseURL:nil];
+    NSLog(modifiedHTML);
+    [self.activityView stopAnimating];
+    [self.activityView setHidden:true];
 }
-*/
+
+- (void)webView:(WKWebView *)webView didFinishNavigation:(WKNavigation *)navigation {
+    [self.activityView stopAnimating];
+}
 
 @end

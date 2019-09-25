@@ -15,10 +15,12 @@
     NSString *newsTitle = item[@"title"];
     NSString *timeStamp = item[@"displayTimestamp"];
     NSString *thumbnailImageUrl = item[@"thumbnailImageURL"];
+    NSString *contentBody = item[@"contentBody"];
     InnerNewsFeedDataModel *innerNewsFeedDataModel = [InnerNewsFeedDataModel new];
     innerNewsFeedDataModel.newsTitle = newsTitle;
     innerNewsFeedDataModel.timeStamp = timeStamp;
     innerNewsFeedDataModel.thumbnailImageUrl = thumbnailImageUrl;
+    innerNewsFeedDataModel.contentBody = contentBody;
     return innerNewsFeedDataModel;
 }
 

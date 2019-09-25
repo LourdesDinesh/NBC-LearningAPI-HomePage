@@ -13,6 +13,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property(strong, nonatomic) NSString *newsTitle;
 @property(strong, nonatomic) NSString *timeStamp;
 @property(strong, nonatomic) NSString *thumbnailImageUrl;
+@property(strong, nonatomic) NSString *contentBody;
 
 + (id)makeInnerNewsFeedData:(NSDictionary *)newsDataDictionary;
 

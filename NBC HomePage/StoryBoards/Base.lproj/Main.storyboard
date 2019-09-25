@@ -118,12 +118,12 @@
                                     <constraint firstAttribute="width" secondItem="gLb-hW-MZd" secondAttribute="height" multiplier="9:5" id="mfM-Y0-udZ"/>
                                 </constraints>
                             </imageView>
-                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pdF-Tu-AIc">
+                            <wkWebView contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="pdF-Tu-AIc">
                                 <rect key="frame" x="0.0" y="318" width="414" height="544"/>
                                 <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <wkWebViewConfiguration key="configuration">
                                     <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
-                                    <wkPreferences key="preferences"/>
+                                    <wkPreferences key="preferences" minimumFontSize="50"/>
                                 </wkWebViewConfiguration>
                             </wkWebView>
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="4Hd-o9-ubY">
@@ -149,6 +149,11 @@
                         <viewLayoutGuide key="safeArea" id="FcC-TQ-2MD"/>
                     </view>
                     <navigationItem key="navigationItem" largeTitleDisplayMode="never" id="u0O-bc-Tgx"/>
+                    <connections>
+                        <outlet property="activityView" destination="4Hd-o9-ubY" id="Lmd-V1-40w"/>
+                        <outlet property="thumbnailImageView" destination="gLb-hW-MZd" id="E4S-iZ-y8c"/>
+                        <outlet property="webView" destination="pdF-Tu-AIc" id="hLy-r8-Nfv"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qi5-ha-o09" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
