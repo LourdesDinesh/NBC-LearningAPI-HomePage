@@ -6,12 +6,12 @@
 //  Copyright © 2019 Tringapps. All rights reserved.
 //
 
-#import "ViewController.h"
+#import "HeadlinesViewController.h"
 #import "NewsTableViewCell.h"
 #import "HomePageNewsDataModel.h"
 
 
-@interface ViewController() <UITableViewDataSource> {
+@interface HeadlinesViewController() <UITableViewDataSource, UITableViewDelegate> {
     NSMutableArray <HomePageNewsDataModel *> *homePageNewsDataModel;
 }
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
@@ -23,7 +23,7 @@
 
 NSString *kURLHome = @"https://www.nbcnewyork.com/apps/news-app/home/modules/?apiVersion=18&os=ios";
 
-@implementation ViewController
+@implementation HeadlinesViewController
 
 #pragma mark - View Controller - Life Cycle
 
@@ -31,6 +31,7 @@ NSString *kURLHome = @"https://www.nbcnewyork.com/apps/news-app/home/modules/?ap
     homePageNewsDataModel = [NSMutableArray new];
     [super viewDidLoad];
     self.tableView.dataSource = self;
+    self.tableView.delegate = self;
     [self fetchDataFromJson];
 }
 #pragma mark - View Controller - Life Cycle - Helper
@@ -38,7 +39,7 @@ NSString *kURLHome = @"https://www.nbcnewyork.com/apps/news-app/home/modules/?ap
 - (void)fetchDataFromJson {
     NSLog(@"Fetch Data From Api");
     NSURL *urlObject = [NSURL URLWithString:kURLHome];
-    __weak ViewController *weakSelf = self;
+    __weak HeadlinesViewController *weakSelf = self;
     [[NSURLSession.sharedSession dataTaskWithURL:urlObject completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
         NSError *err;
         id jsonCustomData = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:&err];
@@ -52,7 +53,7 @@ NSString *kURLHome = @"https://www.nbcnewyork.com/apps/news-app/home/modules/?ap
         }
         NSDictionary *jsonDictionary = (NSDictionary *)jsonCustomData;
         NSArray *modulesArray = jsonDictionary[@"modules"];
-        ViewController *strongSelf = weakSelf;
+        HeadlinesViewController *strongSelf = weakSelf;
         if(strongSelf) {
             for( NSDictionary *section in modulesArray) {
                 HomePageNewsDataModel *homePageData =(HomePageNewsDataModel*)  [HomePageNewsDataModel makeHomePageNewsData:section];
@@ -91,6 +92,11 @@ NSString *kURLHome = @"https://www.nbcnewyork.com/apps/news-app/home/modules/?ap
 
     });
     return cell;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    [tableView deselectRowAtIndexPath:indexPath animated:true];
+    [self performSegueWithIdentifier:@"NewsPageSegueIdentifier" sender:self];
 }
 
 @end

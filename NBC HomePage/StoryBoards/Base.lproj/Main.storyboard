@@ -11,7 +11,7 @@
         <!--Headlines-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="HeadlinesViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -104,10 +104,10 @@
             </objects>
             <point key="canvasLocation" x="944.92753623188412" y="18.75"/>
         </scene>
-        <!--View Controller-->
+        <!--News Description View Controller-->
         <scene sceneID="SdC-mj-p1k">
             <objects>
-                <viewController id="2rf-zv-BpK" sceneMemberID="viewController">
+                <viewController id="2rf-zv-BpK" customClass="NewsDescriptionViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="V5N-cf-LvM">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -126,7 +126,7 @@
                                     <wkPreferences key="preferences"/>
                                 </wkWebViewConfiguration>
                             </wkWebView>
-                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="4Hd-o9-ubY">
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="4Hd-o9-ubY">
                                 <rect key="frame" x="190" y="573" width="34" height="34"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="4Hd-o9-ubY" secondAttribute="height" multiplier="1:1" id="Ndn-wr-gr2"/>
