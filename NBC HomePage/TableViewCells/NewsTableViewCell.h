@@ -7,11 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "InnerNewsFeedDataModel.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface NewsTableViewCell : UITableViewCell
-
+@property (weak, nonatomic) IBOutlet UILabel *timeStamp;
+@property (weak, nonatomic) IBOutlet UIImageView *newsImage;
+@property (weak, nonatomic) IBOutlet UILabel *newsTitle;
+- (void)setValues:(InnerNewsFeedDataModel*)data;
 @end
 
 NS_ASSUME_NONNULL_END

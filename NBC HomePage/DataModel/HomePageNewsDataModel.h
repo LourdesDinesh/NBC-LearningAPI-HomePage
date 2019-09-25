@@ -17,6 +17,9 @@ NS_ASSUME_NONNULL_BEGIN
 }
 @property(strong, nonatomic) NSString *sectionHeader;
 @property(strong, nonatomic) NSArray<InnerNewsFeedDataModel *> *innerNewsFeedDataModel;
+
++ (HomePageNewsDataModel *)makeHomePageNewsData:(id)data;
+
 @end
 
 NS_ASSUME_NONNULL_END

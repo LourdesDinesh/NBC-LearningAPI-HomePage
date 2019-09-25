@@ -10,4 +10,16 @@
 
 @implementation InnerNewsFeedDataModel
 
++ (id)makeInnerNewsFeedData:(NSArray *)newsDataDictionary {
+    NSDictionary *item = (NSDictionary *)newsDataDictionary;
+    NSString *newsTitle = item[@"title"];
+    NSString *timeStamp = item[@"displayTimestamp"];
+    NSString *thumbnailImageUrl = item[@"thumbnailImageURL"];
+    InnerNewsFeedDataModel *innerNewsFeedDataModel = [InnerNewsFeedDataModel new];
+    innerNewsFeedDataModel.newsTitle = newsTitle;
+    innerNewsFeedDataModel.timeStamp = timeStamp;
+    innerNewsFeedDataModel.thumbnailImageUrl = thumbnailImageUrl;
+    return innerNewsFeedDataModel;
+}
+
 @end

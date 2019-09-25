@@ -7,6 +7,7 @@
 //
 
 #import "NewsTableViewCell.h"
+#import "InnerNewsFeedDataModel.h"
 
 @implementation NewsTableViewCell
 
@@ -19,6 +20,10 @@
     [super setSelected:selected animated:animated];
 
     // Configure the view for the selected state
+}
+
+- (void)setValues:(InnerNewsFeedDataModel *)data {
+    _newsTitle.text = @"Hello, this work";
 }
 
 @end
