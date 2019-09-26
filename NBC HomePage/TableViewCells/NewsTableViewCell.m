@@ -29,13 +29,20 @@
 }
 
 - (void)setImage:(NSString *)url {
+    __weak NewsTableViewCell *weakSelf = self;
     dispatch_async(dispatch_get_global_queue(0,0), ^{
+        NewsTableViewCell *strongSelf;
+        if(weakSelf == nil) {
+            return;
+        } else {
+            strongSelf = weakSelf;
+        }
         UIImage *cachedImage = [self.imageCache objectForKey:url];
         if(cachedImage == nil) {
             NSLog(@"Image Not Cached yet");
         } else {
             dispatch_async(dispatch_get_main_queue(), ^{
-                self.newsImage.image = cachedImage;
+                strongSelf.newsImage.image = cachedImage;
             });
             return;
         }
@@ -46,8 +53,8 @@
         }
         dispatch_async(dispatch_get_main_queue(), ^{
             UIImage *downloadedImage = [UIImage imageWithData:data];
-            self.newsImage.image = downloadedImage;
-            [self.imageCache setObject:downloadedImage forKey:url];
+            strongSelf.newsImage.image = downloadedImage;
+            [strongSelf.imageCache setObject:downloadedImage forKey:url];
         });
     });
 }
