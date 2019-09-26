@@ -9,7 +9,7 @@
 #import "NewsDescriptionViewController.h"
 #import <WebKit/WebKit.h>
 
-@interface NewsDescriptionViewController () <WKNavigationDelegate>
+@interface NewsDescriptionViewController ()
 @property (weak, nonatomic) IBOutlet WKWebView *webView;
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityView;
 @property (weak, nonatomic) IBOutlet UIImageView *thumbnailImageView;
@@ -70,9 +70,6 @@ NSString *htmlTemplate = @"<html>"
     NSString *modifiedHTML = [NSString stringWithFormat: htmlTemplate, self.contentBody];
     [self.webView loadHTMLString:modifiedHTML baseURL:nil];
     NSLog(@"%@", modifiedHTML);
-}
-
-- (void)webView:(WKWebView *)webView didFinishNavigation:(WKNavigation *)navigation {
     [self.activityView stopAnimating];
     [self.activityView setHidden:true];
 }

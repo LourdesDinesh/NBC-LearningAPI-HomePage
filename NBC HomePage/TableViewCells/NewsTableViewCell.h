@@ -16,6 +16,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (weak, nonatomic) IBOutlet UIImageView *newsImage;
 @property (weak, nonatomic) IBOutlet UILabel *newsTitle;
 - (void)setValues:(InnerNewsFeedDataModel*)data;
+- (void)setImage:(NSString*) url;
 @end
 
 NS_ASSUME_NONNULL_END

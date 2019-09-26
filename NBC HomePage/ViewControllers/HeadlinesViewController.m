@@ -15,6 +15,7 @@
 @interface HeadlinesViewController() <UITableViewDataSource, UITableViewDelegate> {
     NSIndexPath *selectedIndexpath;
     NSMutableArray <HomePageNewsDataModel *> *homePageNewsDataModel;
+//    @interface NSCache<__covariant KeyType, __covariant ObjectType> : NSObject;
 }
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 
@@ -83,17 +84,7 @@ NSString *kURLHome = @"https://www.nbcnewyork.com/apps/news-app/home/modules/?ap
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     NewsTableViewCell *cell = (NewsTableViewCell*) [tableView dequeueReusableCellWithIdentifier:@"NewsTableViewCellReusableIdentity" forIndexPath:indexPath];
-    cell.newsTitle.text = homePageNewsDataModel[indexPath.section].innerNewsFeedDataModel[indexPath.row].newsTitle;
-    cell.timeStamp.text = homePageNewsDataModel[indexPath.section].innerNewsFeedDataModel[indexPath.row].timeStamp;
-    dispatch_async(dispatch_get_global_queue(0,0), ^{
-        NSData * data = [[NSData alloc] initWithContentsOfURL: [NSURL URLWithString: self->homePageNewsDataModel[indexPath.section].innerNewsFeedDataModel[indexPath.row].thumbnailImageUrl]];
-        if ( data == nil )
-            return;
-        dispatch_async(dispatch_get_main_queue(), ^{
-            cell.newsImage.image = [UIImage imageWithData:data];
-        });
-
-    });
+    [cell setValues:homePageNewsDataModel[indexPath.section].innerNewsFeedDataModel[indexPath.row]];
     return cell;
 }
 
