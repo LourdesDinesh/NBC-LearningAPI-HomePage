@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface HeadlinesViewController : UIViewController 
-
+@property (strong, nonatomic) NSCache *imageCache;
 
 @end
 

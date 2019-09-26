@@ -30,13 +30,24 @@
 
 - (void)setImage:(NSString *)url {
     dispatch_async(dispatch_get_global_queue(0,0), ^{
-            NSData * data = [[NSData alloc] initWithContentsOfURL: [NSURL URLWithString: url]];
+        UIImage *cachedImage = [self.imageCache objectForKey:url];
+        if(cachedImage == nil) {
+            NSLog(@"Image Not Cached yet");
+        } else {
+            dispatch_async(dispatch_get_main_queue(), ^{
+                self.newsImage.image = cachedImage;
+            });
+            return;
+        }
+        NSData * data = [[NSData alloc] initWithContentsOfURL: [NSURL URLWithString: url]];
         if ( data == nil ) {
             NSLog(@"No Data Obtained From Image Url");
                 return;
         }
         dispatch_async(dispatch_get_main_queue(), ^{
-            self.newsImage.image = [UIImage imageWithData:data];
+            UIImage *downloadedImage = [UIImage imageWithData:data];
+            self.newsImage.image = downloadedImage;
+            [self.imageCache setObject:downloadedImage forKey:url];
         });
     });
 }

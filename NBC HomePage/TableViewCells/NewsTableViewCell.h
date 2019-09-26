@@ -15,6 +15,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (weak, nonatomic) IBOutlet UILabel *timeStamp;
 @property (weak, nonatomic) IBOutlet UIImageView *newsImage;
 @property (weak, nonatomic) IBOutlet UILabel *newsTitle;
+@property (strong, nonatomic) NSCache *imageCache;
 - (void)setValues:(InnerNewsFeedDataModel*)data;
 - (void)setImage:(NSString*) url;
 @end

@@ -31,9 +31,10 @@ NSString *kURLHome = @"https://www.nbcnewyork.com/apps/news-app/home/modules/?ap
 #pragma mark - View Controller - Life Cycle
 
 - (void)viewDidLoad {
+    [super viewDidLoad];
     selectedIndexpath = [NSIndexPath new];
     homePageNewsDataModel = [NSMutableArray new];
-    [super viewDidLoad];
+    self.imageCache = [NSCache new];
     self.tableView.dataSource = self;
     self.tableView.delegate = self;
     [self fetchDataFromJson];
@@ -84,6 +85,7 @@ NSString *kURLHome = @"https://www.nbcnewyork.com/apps/news-app/home/modules/?ap
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     NewsTableViewCell *cell = (NewsTableViewCell*) [tableView dequeueReusableCellWithIdentifier:@"NewsTableViewCellReusableIdentity" forIndexPath:indexPath];
+    cell.imageCache = self.imageCache;
     [cell setValues:homePageNewsDataModel[indexPath.section].innerNewsFeedDataModel[indexPath.row]];
     return cell;
 }
