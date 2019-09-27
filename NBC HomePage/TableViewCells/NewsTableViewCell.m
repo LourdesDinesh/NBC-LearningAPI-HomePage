@@ -26,6 +26,7 @@
     self.timeStamp.text = data.timeStamp;
     self.newsTitle.text = data.newsTitle;
     [self setImage:data.thumbnailImageUrl];
+//    self.backgroundView.layer.cornerRadius = 10;
 }
 
 - (void)setImage:(NSString *)url {

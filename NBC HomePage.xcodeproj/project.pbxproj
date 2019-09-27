@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5E17E439233E11F1009955DE /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E17E438233E11F0009955DE /* WebKit.framework */; };
+		5E17E440233E12AD009955DE /* NetworkManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E17E43F233E12AD009955DE /* NetworkManager.m */; };
 		5E5B6E862338F9150043C2A9 /* HomePageNewsDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E5B6E852338F9150043C2A9 /* HomePageNewsDataModel.m */; };
 		5E5B6E892338F9E10043C2A9 /* InnerNewsFeedDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E5B6E882338F9E10043C2A9 /* InnerNewsFeedDataModel.m */; };
 		5E84B8322334C92D00F25FC3 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E84B8312334C92D00F25FC3 /* AppDelegate.m */; };
@@ -21,6 +23,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5E17E438233E11F0009955DE /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
+		5E17E43E233E12AD009955DE /* NetworkManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NetworkManager.h; sourceTree = "<group>"; };
+		5E17E43F233E12AD009955DE /* NetworkManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NetworkManager.m; sourceTree = "<group>"; };
 		5E5B6E842338F9150043C2A9 /* HomePageNewsDataModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomePageNewsDataModel.h; sourceTree = "<group>"; };
 		5E5B6E852338F9150043C2A9 /* HomePageNewsDataModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomePageNewsDataModel.m; sourceTree = "<group>"; };
 		5E5B6E872338F9E10043C2A9 /* InnerNewsFeedDataModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InnerNewsFeedDataModel.h; sourceTree = "<group>"; };
@@ -47,12 +52,30 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5E17E439233E11F1009955DE /* WebKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5E17E437233E11F0009955DE /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5E17E438233E11F0009955DE /* WebKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		5E17E43A233E121B009955DE /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				5E17E43E233E12AD009955DE /* NetworkManager.h */,
+				5E17E43F233E12AD009955DE /* NetworkManager.m */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
 		5E5B6E832338F8DC0043C2A9 /* DataModel */ = {
 			isa = PBXGroup;
 			children = (
@@ -69,6 +92,7 @@
 			children = (
 				5E84B82F2334C92D00F25FC3 /* NBC HomePage */,
 				5E84B82E2334C92D00F25FC3 /* Products */,
+				5E17E437233E11F0009955DE /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -83,6 +107,7 @@
 		5E84B82F2334C92D00F25FC3 /* NBC HomePage */ = {
 			isa = PBXGroup;
 			children = (
+				5E17E43A233E121B009955DE /* Helpers */,
 				5E5B6E832338F8DC0043C2A9 /* DataModel */,
 				5E84B84B2334D6B500F25FC3 /* TableViewCells */,
 				5E84B84A2334D69700F25FC3 /* StoryBoards */,
@@ -203,6 +228,7 @@
 				5E5B6E862338F9150043C2A9 /* HomePageNewsDataModel.m in Sources */,
 				5E84B8352334C92D00F25FC3 /* HeadlinesViewController.m in Sources */,
 				5E84B8432334C94400F25FC3 /* main.m in Sources */,
+				5E17E440233E12AD009955DE /* NetworkManager.m in Sources */,
 				5E84B8322334C92D00F25FC3 /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -348,6 +374,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = D2P9XDG372;
 				INFOPLIST_FILE = "NBC HomePage/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -365,6 +392,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = D2P9XDG372;
 				INFOPLIST_FILE = "NBC HomePage/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
