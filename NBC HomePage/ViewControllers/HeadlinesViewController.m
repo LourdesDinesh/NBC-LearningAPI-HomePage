@@ -46,6 +46,10 @@ NSString *kURLHome = @"https://www.nbcnewyork.com/apps/news-app/home/modules/?ap
     NSURL *urlObject = [NSURL URLWithString:kURLHome];
     __weak HeadlinesViewController *weakSelf = self;
     [[NSURLSession.sharedSession dataTaskWithURL:urlObject completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+        if(error) {
+            NSLog(@"Error In Url");
+            return;
+        }
         NSError *err;
         id jsonCustomData = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:&err];
         if(err) {
@@ -56,14 +60,9 @@ NSString *kURLHome = @"https://www.nbcnewyork.com/apps/news-app/home/modules/?ap
             NSLog(@"JSON Data is not dictionary");
             return;
         }
-        NSDictionary *jsonDictionary = (NSDictionary *)jsonCustomData;
-        NSArray *modulesArray = jsonDictionary[@"modules"];
         HeadlinesViewController *strongSelf = weakSelf;
         if(strongSelf) {
-            for( NSDictionary *section in modulesArray) {
-                HomePageNewsDataModel *homePageData =(HomePageNewsDataModel*)  [HomePageNewsDataModel makeHomePageNewsData:section];
-                [strongSelf->homePageNewsDataModel addObject:homePageData];
-            }
+            [strongSelf-> homePageNewsDataModel addObjectsFromArray:(HomePageNewsDataModel*)  [HomePageNewsDataModel makeHomePageNewsData:jsonCustomData]];
         }
         dispatch_async(dispatch_get_main_queue(), ^{
             [weakSelf.tableView reloadData];

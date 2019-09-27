@@ -13,7 +13,7 @@
 + (id)makeInnerNewsFeedData:(NSArray *)newsDataDictionary {
     NSDictionary *item = (NSDictionary *)newsDataDictionary;
     NSString *newsTitle = item[@"title"];
-    NSString *timeStamp = item[@"displayTimestamp"];
+    NSString *timeStamp = item[@"articleUpdateDate"];
     NSString *thumbnailImageUrl = item[@"thumbnailImageURL"];
     NSString *contentBody = item[@"contentBody"];
     InnerNewsFeedDataModel *innerNewsFeedDataModel = [InnerNewsFeedDataModel new];
