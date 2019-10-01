@@ -8,8 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
-
+@interface HeadlinesViewController : UIViewController 
+@property (strong, nonatomic) NSCache *imageCache;
 
 @end
 

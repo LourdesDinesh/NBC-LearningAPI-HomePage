@@ -7,27 +7,44 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5E17E439233E11F1009955DE /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E17E438233E11F0009955DE /* WebKit.framework */; };
+		5E17E440233E12AD009955DE /* NetworkManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E17E43F233E12AD009955DE /* NetworkManager.m */; };
+		5E5B6E862338F9150043C2A9 /* HomePageNewsDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E5B6E852338F9150043C2A9 /* HomePageNewsDataModel.m */; };
+		5E5B6E892338F9E10043C2A9 /* InnerNewsFeedDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E5B6E882338F9E10043C2A9 /* InnerNewsFeedDataModel.m */; };
 		5E84B8322334C92D00F25FC3 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E84B8312334C92D00F25FC3 /* AppDelegate.m */; };
-		5E84B8352334C92D00F25FC3 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E84B8342334C92D00F25FC3 /* ViewController.m */; };
+		5E84B8352334C92D00F25FC3 /* HeadlinesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E84B8342334C92D00F25FC3 /* HeadlinesViewController.m */; };
 		5E84B8382334C92D00F25FC3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5E84B8362334C92D00F25FC3 /* Main.storyboard */; };
 		5E84B83B2334C92D00F25FC3 /* NBC_HomePage.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5E84B8392334C92D00F25FC3 /* NBC_HomePage.xcdatamodeld */; };
 		5E84B83D2334C94400F25FC3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5E84B83C2334C94400F25FC3 /* Assets.xcassets */; };
 		5E84B8402334C94400F25FC3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5E84B83E2334C94400F25FC3 /* LaunchScreen.storyboard */; };
 		5E84B8432334C94400F25FC3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E84B8422334C94400F25FC3 /* main.m */; };
+		5E84B84E2334D8DA00F25FC3 /* NewsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E84B84D2334D8DA00F25FC3 /* NewsTableViewCell.m */; };
+		5EED0287233B6ED100CC3DE2 /* NewsDescriptionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EED0286233B6ED100CC3DE2 /* NewsDescriptionViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5E17E438233E11F0009955DE /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
+		5E17E43E233E12AD009955DE /* NetworkManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NetworkManager.h; sourceTree = "<group>"; };
+		5E17E43F233E12AD009955DE /* NetworkManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NetworkManager.m; sourceTree = "<group>"; };
+		5E5B6E842338F9150043C2A9 /* HomePageNewsDataModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomePageNewsDataModel.h; sourceTree = "<group>"; };
+		5E5B6E852338F9150043C2A9 /* HomePageNewsDataModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomePageNewsDataModel.m; sourceTree = "<group>"; };
+		5E5B6E872338F9E10043C2A9 /* InnerNewsFeedDataModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InnerNewsFeedDataModel.h; sourceTree = "<group>"; };
+		5E5B6E882338F9E10043C2A9 /* InnerNewsFeedDataModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InnerNewsFeedDataModel.m; sourceTree = "<group>"; };
 		5E84B82D2334C92D00F25FC3 /* NBC HomePage.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "NBC HomePage.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5E84B8302334C92D00F25FC3 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		5E84B8312334C92D00F25FC3 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		5E84B8332334C92D00F25FC3 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		5E84B8342334C92D00F25FC3 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		5E84B8332334C92D00F25FC3 /* HeadlinesViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HeadlinesViewController.h; sourceTree = "<group>"; };
+		5E84B8342334C92D00F25FC3 /* HeadlinesViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HeadlinesViewController.m; sourceTree = "<group>"; };
 		5E84B8372334C92D00F25FC3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		5E84B83A2334C92D00F25FC3 /* NBC_HomePage.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = NBC_HomePage.xcdatamodel; sourceTree = "<group>"; };
 		5E84B83C2334C94400F25FC3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5E84B83F2334C94400F25FC3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5E84B8412334C94400F25FC3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5E84B8422334C94400F25FC3 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		5E84B84C2334D8DA00F25FC3 /* NewsTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NewsTableViewCell.h; sourceTree = "<group>"; };
+		5E84B84D2334D8DA00F25FC3 /* NewsTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NewsTableViewCell.m; sourceTree = "<group>"; };
+		5EED0285233B6ED100CC3DE2 /* NewsDescriptionViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NewsDescriptionViewController.h; sourceTree = "<group>"; };
+		5EED0286233B6ED100CC3DE2 /* NewsDescriptionViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NewsDescriptionViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -35,17 +52,47 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5E17E439233E11F1009955DE /* WebKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5E17E437233E11F0009955DE /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5E17E438233E11F0009955DE /* WebKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		5E17E43A233E121B009955DE /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				5E17E43E233E12AD009955DE /* NetworkManager.h */,
+				5E17E43F233E12AD009955DE /* NetworkManager.m */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		5E5B6E832338F8DC0043C2A9 /* DataModel */ = {
+			isa = PBXGroup;
+			children = (
+				5E5B6E842338F9150043C2A9 /* HomePageNewsDataModel.h */,
+				5E5B6E852338F9150043C2A9 /* HomePageNewsDataModel.m */,
+				5E5B6E872338F9E10043C2A9 /* InnerNewsFeedDataModel.h */,
+				5E5B6E882338F9E10043C2A9 /* InnerNewsFeedDataModel.m */,
+			);
+			path = DataModel;
+			sourceTree = "<group>";
+		};
 		5E84B8242334C92D00F25FC3 = {
 			isa = PBXGroup;
 			children = (
 				5E84B82F2334C92D00F25FC3 /* NBC HomePage */,
 				5E84B82E2334C92D00F25FC3 /* Products */,
+				5E17E437233E11F0009955DE /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -60,11 +107,13 @@
 		5E84B82F2334C92D00F25FC3 /* NBC HomePage */ = {
 			isa = PBXGroup;
 			children = (
+				5E17E43A233E121B009955DE /* Helpers */,
+				5E5B6E832338F8DC0043C2A9 /* DataModel */,
+				5E84B84B2334D6B500F25FC3 /* TableViewCells */,
+				5E84B84A2334D69700F25FC3 /* StoryBoards */,
+				5E84B8492334D67F00F25FC3 /* ViewControllers */,
 				5E84B8302334C92D00F25FC3 /* AppDelegate.h */,
 				5E84B8312334C92D00F25FC3 /* AppDelegate.m */,
-				5E84B8332334C92D00F25FC3 /* ViewController.h */,
-				5E84B8342334C92D00F25FC3 /* ViewController.m */,
-				5E84B8362334C92D00F25FC3 /* Main.storyboard */,
 				5E84B83C2334C94400F25FC3 /* Assets.xcassets */,
 				5E84B83E2334C94400F25FC3 /* LaunchScreen.storyboard */,
 				5E84B8412334C94400F25FC3 /* Info.plist */,
@@ -72,6 +121,34 @@
 				5E84B8392334C92D00F25FC3 /* NBC_HomePage.xcdatamodeld */,
 			);
 			path = "NBC HomePage";
+			sourceTree = "<group>";
+		};
+		5E84B8492334D67F00F25FC3 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				5E84B8332334C92D00F25FC3 /* HeadlinesViewController.h */,
+				5E84B8342334C92D00F25FC3 /* HeadlinesViewController.m */,
+				5EED0285233B6ED100CC3DE2 /* NewsDescriptionViewController.h */,
+				5EED0286233B6ED100CC3DE2 /* NewsDescriptionViewController.m */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		5E84B84A2334D69700F25FC3 /* StoryBoards */ = {
+			isa = PBXGroup;
+			children = (
+				5E84B8362334C92D00F25FC3 /* Main.storyboard */,
+			);
+			path = StoryBoards;
+			sourceTree = "<group>";
+		};
+		5E84B84B2334D6B500F25FC3 /* TableViewCells */ = {
+			isa = PBXGroup;
+			children = (
+				5E84B84C2334D8DA00F25FC3 /* NewsTableViewCell.h */,
+				5E84B84D2334D8DA00F25FC3 /* NewsTableViewCell.m */,
+			);
+			path = TableViewCells;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -144,9 +221,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5E5B6E892338F9E10043C2A9 /* InnerNewsFeedDataModel.m in Sources */,
 				5E84B83B2334C92D00F25FC3 /* NBC_HomePage.xcdatamodeld in Sources */,
-				5E84B8352334C92D00F25FC3 /* ViewController.m in Sources */,
+				5EED0287233B6ED100CC3DE2 /* NewsDescriptionViewController.m in Sources */,
+				5E84B84E2334D8DA00F25FC3 /* NewsTableViewCell.m in Sources */,
+				5E5B6E862338F9150043C2A9 /* HomePageNewsDataModel.m in Sources */,
+				5E84B8352334C92D00F25FC3 /* HeadlinesViewController.m in Sources */,
 				5E84B8432334C94400F25FC3 /* main.m in Sources */,
+				5E17E440233E12AD009955DE /* NetworkManager.m in Sources */,
 				5E84B8322334C92D00F25FC3 /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -292,6 +374,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = D2P9XDG372;
 				INFOPLIST_FILE = "NBC HomePage/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -309,6 +392,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = D2P9XDG372;
 				INFOPLIST_FILE = "NBC HomePage/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
